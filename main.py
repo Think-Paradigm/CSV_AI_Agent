@@ -22,4 +22,8 @@ agent = create_pandas_dataframe_agent(
     allow_dangerous_code=True,
 )
 
-agent.invoke("can you give me the first row of the dataframe?")
+try:
+    response = agent.invoke("can you give me the first row of the dataframe?")
+    print(response)
+except Exception as e:
+    print(f"Error: {e}")
